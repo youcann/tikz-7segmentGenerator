@@ -1,0 +1,32 @@
+\begin{tikzpicture}[]
+\def\in{1}
+\def\w{3.5}
+\def\h{1}
+\def\s{0.3}
+\def\on{Red}
+\def\off{gray!10}
+
+\def\segA{<segmentA>}
+\def\segB{<segmentB>}
+\def\segC{<segmentC>}
+\def\segD{<segmentD>}
+\def\segE{<segmentE>}
+\def\segF{<segmentF>}
+\def\segG{<segmentG>}
+
+\foreach \x/\y/\p/\n/\c in 
+{
+0/2*\w+2*\s/0/A/\segA,
+\w+\s/\w+\s/90/B/\segB,
+\w+\s/-\w-\s/90/C/\segC,
+0/-2*\w-2*\s/0/D/\segD,
+-\w-\s/-\w-\s/90/E/\segE,
+-\w-\s/\w+\s/90/F/\segF,
+0/0/0/G/\segG}
+{
+	\begin{scope}[shift={(\x,\y)},rotate=\p]
+		\draw[very thick,fill=\c] (0,\h) -- (\w-\in,\h) -- (\w,0) -- (\w-\in,-\h) -- (0,-\h) -- (-\w+\in,-\h) -- (-\w,0) -- (-\w+\in,\h) --cycle;
+		\node[] {\Huge \textcolor{black}{\n}};
+		\end{scope}
+}
+\end{tikzpicture}
